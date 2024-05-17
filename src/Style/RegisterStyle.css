@@ -1,0 +1,59 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+    padding: 1rem;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 4px 8px;
+    font-size: 1em;
+    margin-right: 2rem;
+    width: 70%;
+    border: 1px solid #000;
+    outline: none;
+}
+
+input.user-name{
+    margin-right: 1rem;
+}
+input.dif-margin{
+    margin-right: 2.3rem;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #1B6392;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    border: 1px solid #1B6392;
+    color: #1B6392;
+}
+
+a{
+    color: #1B6392;
+}
+
+a:hover{
+    text-decoration: underline;
+}

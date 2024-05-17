@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Start Header */
+
+.header p{
+    color: #8B96A5;
+}
+.header .different-color{
+    color: #1B6392;
+}
+.header-input input{
+    width: 100%;
+    border: 1px solid #E4E7E9;
+    padding: 0.5rem 3rem;
+    color: #000;
+    outline: none;
+}
+
+/* End Header */
+
+/* Start Categories */
+
+.categories .category ul li .number{
+    color: #8B96A5;
+    margin: 0 0.5rem;
+}
+
+.categories .category ul li i{
+    display: inline-block;
+    color: #FA8232;
+    margin: 0 0.1rem;
+}
+
+.categories .category .description{
+    color: #191C1F;
+    font-size: 14px;
+}
+
+.categories .category .price{
+    color: #2DA5F3;
+}
+
+.categories .category .overlay ul li i{
+    font-size: 26px;
+    display: inline-block;
+    margin-right: 0.7rem;
+    color: #000;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+.categories .category .overlay ul li i.eye-icon{
+    color: #fff;
+    background-color: #FA8232;
+}
+.categories .category .overlay{
+    display: none;
+}
+.categories .category:hover{
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.categories .category:hover .overlay{
+    display: block;
+}
+.categories .category:hover button{
+    visibility: hidden;
+}
+/* End Categories */
+
+/* Start Pagination */
+
+.pagination ul li div{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.pagination ul li div i{
+   font-size: 35px;
+   display: inline-block;
+   margin-top: 0.2rem;
+   color: #FA8232;
+}
+
+.pagination ul li {
+    margin: 0 0.5rem;
+}
+
+.pagination ul .arrow{
+    border: 1px solid #FA8232;
+}
+
+.pagination ul .one{
+    background-color: #FA8232;
+    color: #fff;
+}
+
+.pagination ul .other{
+    border: 1px solid #E4E7E9;
+}
+/* End Pagination */

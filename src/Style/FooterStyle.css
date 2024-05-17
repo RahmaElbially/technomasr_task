@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+    background-color: #000;
+    color: #ADB7BC;
+    text-align: center;
+    padding: 1rem 0;
+}
+.footer p{
+    font-size: 18px;
+}
