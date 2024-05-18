@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../Style/LoginStyle.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface FormValues {
   username: string;
@@ -10,6 +11,8 @@ interface FormValues {
 const LoginForm: React.FC = () => {
   const [values, setValues] = useState<FormValues>({ username: '', password: '' });
   const [errors, setErrors] = useState<FormValues>({ username: '', password: '' });
+  const [apiError, setApiError] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,10 +43,23 @@ const LoginForm: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Form submitted', values);
+      try {
+        const response = await axios.post('https://api.faceapi.com/auth/login', {
+          username: values.username,
+          password: values.password,
+        });
+        const token = response.data.token;
+        localStorage.setItem('token', token);  
+
+        console.log('Login successful', response.data);
+        navigate('/');  
+      } catch (error) {
+        console.error('Login error', error);
+        setApiError('Login failed. Please check your credentials and try again.');
+      }
     }
   };
 
@@ -74,6 +90,7 @@ const LoginForm: React.FC = () => {
                 />
                 {errors.password && <span className="error">{errors.password}</span>}
             </div>
+            {apiError && <span className="error">{apiError}</span>}
             <button type="submit" className='mt-5'>تسجيل الدخول</button>
             <Link to={'/register'} className='mt-5'>ليس لديك حساب ؟ إنشاء حساب</Link>
         </form>
@@ -81,4 +98,4 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm;
+export default LoginForm

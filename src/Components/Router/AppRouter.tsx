@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import ProtectedRoute from '../Router/ProtectedRouter';
 
 const LazyHomePage = React.lazy(() => import('../../Pages/Home'));
 const LazyDepartments = React.lazy(() => import('../../Pages/Departments'));
@@ -18,9 +19,11 @@ const AppRouter: React.FC = () => {
                 <Route path='/dep' element={<LazyDepartments />} />
                 <Route path='/cat' element={<LazyCategories />} />
                 <Route path='/user' element={<LazyLogin />} />
-                <Route path='/cart' element={<LazyCart />} />
-                <Route path='/fav' element={<LazyFavourite />} />
                 <Route path='/register' element={<LazyRegister />} />
+                <Route element={<ProtectedRoute />}>
+                    <Route path='/cart' element={<LazyCart />} />
+                    <Route path='/fav' element={<LazyFavourite />} />
+                </Route>
             </Routes>
         </Suspense>
     );

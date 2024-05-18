@@ -37,6 +37,20 @@
     margin-left: 2rem;
 }
 
+.navbar .middle-nav .left ul a div{
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    color: #1B6392;
+    font-weight: bold;
+    display: none;
+}
 /* Bottom Nav */
 
 .bottom-nav ul a{
