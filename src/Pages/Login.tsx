@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Style/LoginStyle.css'
+import '../Style/LoginStyle.css';
 import { Link } from 'react-router-dom';
 
 interface FormValues {
